@@ -1,27 +1,17 @@
-// screens/HomeScreen.js
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, FlatList, Button } from 'react-native';
 
-const HomeScreen = ({ navigation, route }) => {
-  const { menuItems } = route.params;
-
+const HomeScreen = ({ menuItems }) => {
   return (
     <View>
-      <Text style={{ fontSize: 24, fontWeight: 'bold', textAlign: 'center' }}>Menu</Text>
+      <Text>Total Menu Items: {menuItems.length}</Text>
       <FlatList
         data={menuItems}
+        keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
-          <View style={{ padding: 10 }}>
-            <Text>{item.dishName}</Text>
-            <Text>{item.description}</Text>
-            <Text>{`Price: $${item.price}`}</Text>
-            <Text>{`Course: ${item.course}`}</Text>
-          </View>
+          <Text>{item.name} - {item.course}</Text>
         )}
-        keyExtractor={(item) => item.id}
       />
-      <Button title="Add Menu Item" onPress={() => navigation.navigate('AddMenuItem', { menuItems })} />
-      <Button title="Filter Menu" onPress={() => navigation.navigate('FilterMenu', { menuItems })} />
     </View>
   );
 };
