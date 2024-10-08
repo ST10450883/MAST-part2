@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from 'ChristoffelMenu/screens/AddMenuItemScreen.js';
-import AddMenuItemScreen from 'ChristoffelMenu/screens/AddMenuItemScreen';
+import AddMenuItemScreen from 'ChristoffelMenu/screens/AddMenuScreen';
 import FilterMenuScreen from 'ChristoffelMenu/screens/FilterMenuScreen';
 import 'react-native-gesture-handler';
 
